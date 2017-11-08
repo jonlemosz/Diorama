@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: ca78166712926324596b5839d2793f31
+timeCreated: 1463443229
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Book
+    100002: book leaves
+    100004: book leaves 1
+    100006: Book2
+    100008: bookcase
+    100010: bookcase 1
+    100012: bookcase002
+    100014: bookcase002 1
+    100016: bookcaseTable
+    100018: bookcaseTable001
+    100020: bookcaseTable002
+    100022: bookcaseTable003
+    100024: bookcaseTable004
+    100026: bookcaseTable005
+    100028: bookcaseTable006
+    100030: bookcaseTable007
+    100032: bowl
+    100034: Candle
+    100036: Candle 1
+    100038: Candle02
+    100040: Candle2
+    100042: CandleBase
+    100044: chair
+    100046: chair 1
+    100048: Chair02
+    100050: Chair02 1
+    100052: Cord
+    100054: feather
+    100056: front
+    100058: Hold
+    100060: Hold001
+    100062: Inkwell
+    100064: //RootNode
+    100066: Paper
+    100068: Paper001
+    100070: Paper002
+    100072: Paper003
+    100074: Paper004
+    100076: Papers
+    100078: Potion
+    100080: Potion 2
+    100082: Scroll
+    100084: Scroll 1
+    100086: Table
+    100088: Table 1
+    100090: Table 2
+    100092: Table 3
+    100094: Table 4
+    100096: Table 5
+    100098: Table 6
+    100100: Table 7
+    100102: Table2
+    100104: Table2 1
+    100106: Vase
+    100108: Vase02
+    100110: Vase03
+    100112: Wick
+    100114: Wick 1
+    100116: wood leg
+    100118: wood leg 1
+    100120: wood leg 10
+    100122: wood leg 11
+    100124: wood leg 2
+    100126: wood leg 3
+    100128: wood leg 4
+    100130: wood leg 5
+    100132: wood leg 6
+    100134: wood leg 7
+    100136: wood leg 8
+    100138: wood leg 9
+    400000: Book
+    400002: book leaves
+    400004: book leaves 1
+    400006: Book2
+    400008: bookcase
+    400010: bookcase 1
+    400012: bookcase002
+    400014: bookcase002 1
+    400016: bookcaseTable
+    400018: bookcaseTable001
+    400020: bookcaseTable002
+    400022: bookcaseTable003
+    400024: bookcaseTable004
+    400026: bookcaseTable005
+    400028: bookcaseTable006
+    400030: bookcaseTable007
+    400032: bowl
+    400034: Candle
+    400036: Candle 1
+    400038: Candle02
+    400040: Candle2
+    400042: CandleBase
+    400044: chair
+    400046: chair 1
+    400048: Chair02
+    400050: Chair02 1
+    400052: Cord
+    400054: feather
+    400056: front
+    400058: Hold
+    400060: Hold001
+    400062: Inkwell
+    400064: //RootNode
+    400066: Paper
+    400068: Paper001
+    400070: Paper002
+    400072: Paper003
+    400074: Paper004
+    400076: Papers
+    400078: Potion
+    400080: Potion 2
+    400082: Scroll
+    400084: Scroll 1
+    400086: Table
+    400088: Table 1
+    400090: Table 2
+    400092: Table 3
+    400094: Table 4
+    400096: Table 5
+    400098: Table 6
+    400100: Table 7
+    400102: Table2
+    400104: Table2 1
+    400106: Vase
+    400108: Vase02
+    400110: Vase03
+    400112: Wick
+    400114: Wick 1
+    400116: wood leg
+    400118: wood leg 1
+    400120: wood leg 10
+    400122: wood leg 11
+    400124: wood leg 2
+    400126: wood leg 3
+    400128: wood leg 4
+    400130: wood leg 5
+    400132: wood leg 6
+    400134: wood leg 7
+    400136: wood leg 8
+    400138: wood leg 9
+    2300000: Book
+    2300002: book leaves
+    2300004: book leaves 1
+    2300006: bookcase 1
+    2300008: bookcase002 1
+    2300010: bookcaseTable
+    2300012: bookcaseTable001
+    2300014: bookcaseTable002
+    2300016: bookcaseTable003
+    2300018: bookcaseTable004
+    2300020: bookcaseTable005
+    2300022: bookcaseTable006
+    2300024: bookcaseTable007
+    2300026: bowl
+    2300028: Candle 1
+    2300030: Candle2
+    2300032: CandleBase
+    2300034: chair 1
+    2300036: Chair02 1
+    2300038: Cord
+    2300040: feather
+    2300042: front
+    2300044: Inkwell
+    2300046: Paper
+    2300048: Paper001
+    2300050: Paper002
+    2300052: Paper003
+    2300054: Paper004
+    2300056: Papers
+    2300058: Potion
+    2300060: Potion 2
+    2300062: Scroll 1
+    2300064: Table 1
+    2300066: Table 2
+    2300068: Table 3
+    2300070: Table 4
+    2300072: Table 5
+    2300074: Table 6
+    2300076: Table 7
+    2300078: Table2 1
+    2300080: Vase
+    2300082: Vase02
+    2300084: Vase03
+    2300086: Wick
+    2300088: Wick 1
+    2300090: wood leg
+    2300092: wood leg 1
+    2300094: wood leg 10
+    2300096: wood leg 11
+    2300098: wood leg 2
+    2300100: wood leg 3
+    2300102: wood leg 4
+    2300104: wood leg 5
+    2300106: wood leg 6
+    2300108: wood leg 7
+    2300110: wood leg 8
+    2300112: wood leg 9
+    3300000: Book
+    3300002: book leaves
+    3300004: book leaves 1
+    3300006: bookcase 1
+    3300008: bookcase002 1
+    3300010: bookcaseTable
+    3300012: bookcaseTable001
+    3300014: bookcaseTable002
+    3300016: bookcaseTable003
+    3300018: bookcaseTable004
+    3300020: bookcaseTable005
+    3300022: bookcaseTable006
+    3300024: bookcaseTable007
+    3300026: bowl
+    3300028: Candle 1
+    3300030: Candle2
+    3300032: CandleBase
+    3300034: chair 1
+    3300036: Chair02 1
+    3300038: Cord
+    3300040: feather
+    3300042: front
+    3300044: Inkwell
+    3300046: Paper
+    3300048: Paper001
+    3300050: Paper002
+    3300052: Paper003
+    3300054: Paper004
+    3300056: Papers
+    3300058: Potion
+    3300060: Potion 2
+    3300062: Scroll 1
+    3300064: Table 1
+    3300066: Table 2
+    3300068: Table 3
+    3300070: Table 4
+    3300072: Table 5
+    3300074: Table 6
+    3300076: Table 7
+    3300078: Table2 1
+    3300080: Vase
+    3300082: Vase02
+    3300084: Vase03
+    3300086: Wick
+    3300088: Wick 1
+    3300090: wood leg
+    3300092: wood leg 1
+    3300094: wood leg 10
+    3300096: wood leg 11
+    3300098: wood leg 2
+    3300100: wood leg 3
+    3300102: wood leg 4
+    3300104: wood leg 5
+    3300106: wood leg 6
+    3300108: wood leg 7
+    3300110: wood leg 8
+    3300112: wood leg 9
+    4300000: bookcaseTable
+    4300002: bookcaseTable001
+    4300004: bookcaseTable002
+    4300006: bookcaseTable003
+    4300008: bookcaseTable004
+    4300010: bookcase
+    4300012: bookcaseTable005
+    4300014: bookcase002
+    4300016: bookcaseTable006
+    4300018: bookcaseTable007
+    4300020: wood leg
+    4300022: wood leg
+    4300024: wood leg
+    4300026: wood leg
+    4300028: chair
+    4300030: wood leg
+    4300032: wood leg
+    4300034: wood leg
+    4300036: wood leg
+    4300038: Chair02
+    4300040: Table
+    4300042: wood leg
+    4300044: wood leg
+    4300046: wood leg
+    4300048: wood leg
+    4300050: Book
+    4300052: front
+    4300054: book leaves
+    4300056: book leaves
+    4300058: Cord
+    4300060: Scroll
+    4300062: Potion
+    4300064: Potion 2
+    4300066: Table
+    4300068: Table
+    4300070: Table
+    4300072: Table2
+    4300074: Table
+    4300076: Table
+    4300078: Table
+    4300080: Candle
+    4300082: Wick
+    4300084: Wick
+    4300086: Candle2
+    4300088: CandleBase
+    4300090: Papers
+    4300092: Paper
+    4300094: Paper001
+    4300096: Paper002
+    4300098: Paper003
+    4300100: Paper004
+    4300102: Vase
+    4300104: Vase02
+    4300106: Vase03
+    4300108: bowl
+    4300110: feather
+    4300112: Inkwell
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
