@@ -21,7 +21,13 @@ public class LibraryController : MonoBehaviour {
         }
     }
 
-    void RefillWalls()
+    public void Next()
+    {
+        //Load books (next self collection)
+        RefillWalls();
+    }
+
+    public void RefillWalls()
     {
         for (int i = 0; i < wallControllers.Count; i++)
         {

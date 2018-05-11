@@ -43,9 +43,7 @@ public class ShelveController : MonoBehaviour {
             GameObject bookRef = Instantiate(Resources.Load<GameObject>("Book"), pivot.transform);
             bookWorldRefs.Add(bookRef.GetComponent<BookController>());
         }
-
         refill = false;
-
     }
 	
 	// Update is called once per frame
