@@ -4,7 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Diorama.unity
-    guid: b8fabf5ae0166445e85b65a942652477
+  m_Scenes: []
