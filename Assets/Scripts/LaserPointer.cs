@@ -57,6 +57,11 @@ public class LaserPointer : MonoBehaviour {
             {
                 hitPoint = hit.point;
                 ShowLaser(hit);
+
+                if (hit.collider.gameObject.GetComponentInParent<BookController>())
+                {
+                    Debug.Log(hit.collider.gameObject.GetComponentInParent<BookController>().GetComponentInChildren<UnityEngine.UI.Text>().text);
+                }
             }
         }
         else // 3
