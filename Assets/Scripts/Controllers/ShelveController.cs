@@ -44,12 +44,13 @@ public class ShelveController : MonoBehaviour {
             bookWorldRefs.Add(bookRef.GetComponent<BookController>());
         }
         refill = false;
+        UpdateShelve();
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void UpdateShelve () {
 
-        if (refill) Fill();
+        //if (refill) Fill();
 
         for (int i = 0; i < bookWorldRefs.Count; i++)
         {
