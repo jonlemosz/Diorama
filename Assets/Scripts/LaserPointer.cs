@@ -48,7 +48,7 @@ public class LaserPointer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // 1
-        if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+        if (Controller.GetPress(SteamVR_Controller.ButtonMask.Trigger))
         {
             RaycastHit hit;
 
@@ -61,6 +61,7 @@ public class LaserPointer : MonoBehaviour {
                 if (hit.collider.gameObject.GetComponentInParent<BookController>())
                 {
                     Debug.Log(hit.collider.gameObject.GetComponentInParent<BookController>().GetComponentInChildren<UnityEngine.UI.Text>().text);
+                    LibraryController.ShowBookData(hit.collider.gameObject.GetComponentInParent<BookController>().info);
                 }
             }
         }
