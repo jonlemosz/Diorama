@@ -13,9 +13,8 @@ public class HandController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-        bool grip = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_Grip) : 
-                             MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_Grip);
+        bool grip = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) : 
+                             MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);
 
         /*bool trigger = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) :
                              MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);*/

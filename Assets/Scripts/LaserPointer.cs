@@ -48,7 +48,7 @@ public class LaserPointer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // 1
-        if (Controller.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+        if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
         {
             RaycastHit hit;
 
