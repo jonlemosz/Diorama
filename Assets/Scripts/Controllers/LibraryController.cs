@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class LibraryController : MonoBehaviour {
 
-
     public Text bookView_title;
     public Text bookView_author;
     public Text bookView_topic;
@@ -14,6 +13,8 @@ public class LibraryController : MonoBehaviour {
 
     List<WallController> wallControllers;
     public static LibraryController instance;
+
+    bool isDownloading = false;
 
     private void Awake()
     {
@@ -43,12 +44,29 @@ public class LibraryController : MonoBehaviour {
         RefillWalls();
     }
 
+   
     public static void RefillWalls()
     {
-        for (int i = 0; i < instance.wallControllers.Count; i++)
+        if (instance.isDownloading) return;
+
+        instance.isDownloading = true;
+        Debug.Log("Geting books");
+        API.GetBooks((books) =>
         {
-            instance.wallControllers[i].RefillShelves();
-        }
+            Debug.Log("Instantiating books");
+
+            instance.isDownloading = false;
+            for (int i = 0; i < instance.wallControllers.Count; i++)
+            {
+                instance.wallControllers[i].RefillShelves();
+            }
+
+            Debug.Log("Library done");
+
+        });
+
+
+        
     }
 
     public static void ShowBookData(BookInfo info) {
