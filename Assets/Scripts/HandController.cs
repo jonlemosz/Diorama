@@ -7,15 +7,37 @@ public class HandController : MonoBehaviour {
     public float radious;
     public LayerMask lMask;
 
-    public Transform trackedObject;
+    [SerializeField]
+    private Transform trackedObject;
     public bool isLeft = false;
 
-	// Update is called once per frame
-	void Update () {
+    public Transform TrackedObject
+    {
+        get
+        {
+            return trackedObject;
+        }
+
+        set
+        {
+            if (value == null)
+                trackedObject.GetComponentInChildren<BookController>().grabbed = false;
+            else value.GetComponentInChildren<BookController>().grabbed = true;
+
+            trackedObject = value;
+        }
+    }
+
+    public bool useTestingGrip = false;
+    public bool testingGripValue = false;
+
+    // Update is called once per frame
+    void Update () {
+
 
         bool grip = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) : 
                              MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);
-
+        if (useTestingGrip) grip = testingGripValue;
         /*bool trigger = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) :
                              MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);*/
 
@@ -23,7 +45,7 @@ public class HandController : MonoBehaviour {
 
         if (grip)
         {
-            if (!trackedObject) CastSphere();
+            if (!TrackedObject) CastSphere();
             else {
                 /*if (trigger)
                 {
@@ -37,11 +59,11 @@ public class HandController : MonoBehaviour {
             }
         }
         else {
-            if (trackedObject)
+            if (TrackedObject)
             {
-                trackedObject.parent = null;
-                trackedObject.GetComponent<Rigidbody>().isKinematic = false;
-                trackedObject = null;
+                TrackedObject.parent = null;
+                TrackedObject.GetComponent<Rigidbody>().isKinematic = false;
+                TrackedObject = null;
 
             }
         }
@@ -53,10 +75,10 @@ public class HandController : MonoBehaviour {
         Debug.LogError("Visible objects: " + visibleObjects.Length);
         if (visibleObjects.Length > 0)
         {
-            trackedObject = visibleObjects[0].transform;
-            trackedObject.parent = transform;
-            trackedObject.GetComponent<Rigidbody>().isKinematic = true;
-            LibraryController.ShowBookData(trackedObject.GetComponentInChildren<BookController>().info);
+            TrackedObject = visibleObjects[0].transform;
+            TrackedObject.parent = transform;
+            TrackedObject.GetComponent<Rigidbody>().isKinematic = true;
+            LibraryController.ShowBookData(TrackedObject.GetComponentInChildren<BookController>().info);
         }
 
     }
