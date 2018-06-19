@@ -9,6 +9,7 @@ using IBM.Watson.DeveloperCloud.Connection;
 using IBM.Watson.DeveloperCloud.DataTypes;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 
 [System.Serializable]
 public class WatsonVoiceCommands
@@ -172,6 +173,8 @@ public class WatsonSpechController : MonoBehaviour {
         timmer = timmer > 0 ? timmer - Time.deltaTime : 0;
     }
 
+    public bool searching;
+
     private void OnRecognize(SpeechRecognitionEvent result, Dictionary<string, object> customData)
     {
         if (timmer > 0) return;
@@ -181,21 +184,39 @@ public class WatsonSpechController : MonoBehaviour {
             {
                 foreach (var alt in res.alternatives)
                 {
-                    string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
-                    Log.Debug("ExampleStreaming.OnRecognize()", text);
-                    //ResultsField.text = text;
-
-                    foreach (var vc in voiceCommands)
+                    if (res.final)
                     {
-                        if (text.ToLower().Contains(vc.trigger.ToLower())) {
-                            Debug.LogError("Aloha");
-                            vc.onsTrigger.Invoke();
-                            timmer = 2;
+                        //string text = alt.transcript;
+                        string text = alt.WordConfidence[0].Word;
+                        if (searching == false)
+                        {
+                            if (text.ToLower().Contains("search"))
+                            {
+                                searching = true;
+                                NotificationArea.Text = "Searching, say a keyword";
+                            }
+                        }
+                        else
+                        {
+                            if (!text.ToLower().Contains("search"))
+                            {
+                                //Debug.LogError("buscando: " + text);
+                                searching = false;
+                                API.Search(text);
+                                NotificationArea.Text = "Wait a moment, looking for \n"+text;
+
+                            }
+                        }
+
+                        foreach (var vc in voiceCommands)
+                        {
+                            if (text.ToLower().Contains(vc.trigger.ToLower()))
+                            {
+                                vc.onsTrigger.Invoke();
+                                timmer = 2;
+                            }
                         }
                     }
-
-                    /*if (text.ToLower().Contains("next")) colorCard.color = Color.green;
-                    if (text.ToLower().Contains("previous")) colorCard.color = Color.red;*/
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
