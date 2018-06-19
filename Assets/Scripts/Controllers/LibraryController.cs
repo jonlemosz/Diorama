@@ -28,6 +28,7 @@ public class LibraryController : MonoBehaviour {
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
         RefillWalls();
+        API.onSearchResult += RefillWalls;
     }
 
     public void Update()
@@ -50,7 +51,7 @@ public class LibraryController : MonoBehaviour {
         if (instance.isDownloading) return;
 
         instance.isDownloading = true;
-        Debug.Log("Geting books");
+        //Debug.Log("Geting books");
         API.GetBooks((books) =>
         {
             Debug.Log("Instantiating books");
