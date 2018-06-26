@@ -123,4 +123,43 @@ public class API : MonoBehaviour {
         }
     }
 
+    public void TryToSendMail() {
+        StartCoroutine(SendMail());
+
+    }
+
+    IEnumerator SendMail()
+    {
+        NotificationArea.Text = "Trying to send mail";
+
+        Debug.LogWarning("Trying to send mail");
+        string endpoint = "http://35.185.26.14:3000/mail/";
+        WWWForm form = new WWWForm();
+        form.AddField("secret", "qwertyuiop");
+        form.AddField("from", "Babel <babel.library.vr@gmail.com>");
+        form.AddField("to", CollectDataController.userEmail);
+        form.AddField("subject", "Your book");
+        form.AddField("text", "Your book");
+        form.AddField("html",
+            "<h2>"+LibraryController.openBook.title+"</h2>" +
+            "<p><strong> Author:</strong> " + LibraryController.openBook.author + " </p>" +
+            "<p><strong> Topic:</strong> " + LibraryController.openBook.topic+ " </p>" +
+            "<p><strong> Location:</strong> " + LibraryController.openBook.location+ " </p>" +
+            "<p> <b>Note:</b> " + LibraryController.openBook.note + "</p>" + "\n" +
+            System.DateTime.Now.ToString());
+        WWW www = new WWW(endpoint, form);
+        yield return www;
+
+        if (string.IsNullOrEmpty(www.error))
+        {
+            NotificationArea.Text = "Book info sent!";
+        }
+        else
+        {
+            NotificationArea.Text = "Sorry, something went wrong, plese try again later.";
+            Debug.LogError(www.error);
+        }
+    }
+
+
 }

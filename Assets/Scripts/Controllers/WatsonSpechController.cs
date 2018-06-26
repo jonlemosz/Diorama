@@ -184,8 +184,10 @@ public class WatsonSpechController : MonoBehaviour {
             {
                 foreach (var alt in res.alternatives)
                 {
+                    
                     if (res.final)
                     {
+                        Debug.LogError(alt.transcript);
                         //string text = alt.transcript;
                         string text = alt.WordConfidence[0].Word;
                         if (searching == false)
