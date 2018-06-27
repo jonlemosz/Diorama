@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BookInfo {
     public string id;
     public string title;
-    public string autor;
+    public string author;
     public string topic;
     public string note;
     public string location;

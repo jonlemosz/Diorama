@@ -13,6 +13,7 @@ public class LibraryController : MonoBehaviour {
 
     List<WallController> wallControllers;
     public static LibraryController instance;
+    public static BookInfo openBook;
 
     bool isDownloading = false;
 
@@ -71,8 +72,9 @@ public class LibraryController : MonoBehaviour {
     }
 
     public static void ShowBookData(BookInfo info) {
+        openBook = info;
         instance.bookView_title.text = "Title: "+info.title;
-        instance.bookView_author.text = "Author: " + info.autor;
+        instance.bookView_author.text = "Author: " + info.author;
         instance.bookView_topic.text = "Topic: " + info.topic;
         instance.bookView_note.text = "Note: " + info.note;
         instance.bookView_location.text = "Location: " + info.location;
