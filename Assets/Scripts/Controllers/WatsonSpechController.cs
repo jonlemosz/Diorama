@@ -167,17 +167,17 @@ public class WatsonSpechController : MonoBehaviour {
         yield break;
     }
 
-    float timmer = 2;
+    float timer = 2;
     private void Update()
     {
-        timmer = timmer > 0 ? timmer - Time.deltaTime : 0;
+        timer = timer > 0 ? timer - Time.deltaTime : 0;
     }
 
     public bool searching;
 
     private void OnRecognize(SpeechRecognitionEvent result, Dictionary<string, object> customData)
     {
-        if (timmer > 0) return;
+        if (timer > 0) return;
         if (result != null && result.results.Length > 0)
         {
             foreach (var res in result.results)
@@ -195,7 +195,7 @@ public class WatsonSpechController : MonoBehaviour {
                             if (text.ToLower().Contains("search"))
                             {
                                 searching = true;
-                                NotificationArea.Text = "Searching, say a keyword";
+                                NotificationArea.Text = "Please say a keyword";
                             }
                         }
                         else
@@ -205,8 +205,7 @@ public class WatsonSpechController : MonoBehaviour {
                                 //Debug.LogError("buscando: " + text);
                                 searching = false;
                                 API.Search(text);
-                                NotificationArea.Text = "Wait a moment, looking for \n"+text;
-
+                                NotificationArea.Text = "Please wait, looking for \"" + text + "\"\n";
                             }
                         }
 
@@ -215,7 +214,7 @@ public class WatsonSpechController : MonoBehaviour {
                             if (text.ToLower().Contains(vc.trigger.ToLower()))
                             {
                                 vc.onsTrigger.Invoke();
-                                timmer = 2;
+                                timer = 2;
                             }
                         }
                     }
