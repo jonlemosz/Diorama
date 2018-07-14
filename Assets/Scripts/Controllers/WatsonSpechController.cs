@@ -62,10 +62,11 @@ public class WatsonSpechController : MonoBehaviour {
         {
             if (value && !_speechToText.IsListening)
             {
+                Debug.LogError("SETTING UP PARAMETERS");
                 _speechToText.DetectSilence = true;
                 _speechToText.EnableWordConfidence = true;
                 _speechToText.EnableTimestamps = true;
-                _speechToText.SilenceThreshold = 0.01f;
+                _speechToText.SilenceThreshold = 0.00f;
                 _speechToText.MaxAlternatives = 0;
                 _speechToText.EnableInterimResults = true;
                 _speechToText.OnError = OnError;
@@ -171,6 +172,8 @@ public class WatsonSpechController : MonoBehaviour {
     private void Update()
     {
         timer = timer > 0 ? timer - Time.deltaTime : 0;
+
+        //Debug.Log(_speechToText.InactivityTimeout);
     }
 
     public bool searching;

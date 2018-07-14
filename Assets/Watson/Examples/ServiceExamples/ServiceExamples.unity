@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872692, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832860417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +321,9 @@ MonoBehaviour:
   _assistantUrl: 
   _assistantWorkspaceId: 
   _assistantVersionDate: 
+  _speechToTextUsername: 
+  _speechToTextPassword: 
+  _speechToTextUrl: 
 --- !u!4 &832860418
 Transform:
   m_ObjectHideFlags: 0
@@ -482,7 +485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1160237479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,9 +497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bb17691cf8f4f44ad0b84e5d240b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _username: 
-  _password: 
-  _url: 
+  _username: 83c9c987-f4a6-4746-b8cb-0790ea48b601
+  _password: KBtuay0xi6Iv
+  _url: https://stream.watsonplatform.net/speech-to-text/api
 --- !u!4 &1160237480
 Transform:
   m_ObjectHideFlags: 0
