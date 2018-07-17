@@ -195,15 +195,15 @@ public class WatsonSpechController : MonoBehaviour {
                         string text = alt.WordConfidence[0].Word;
                         if (searching == false)
                         {
-                            if (text.ToLower().Contains("search"))
+                            if (text.ToLower().Contains("title"))
                             {
                                 searching = true;
-                                NotificationArea.Text = "Please say a keyword";
+                                NotificationArea.Text = "Please say a title keyword";
                             }
                         }
                         else
                         {
-                            if (!text.ToLower().Contains("search"))
+                            if (!text.ToLower().Contains("title"))
                             {
                                 //Debug.LogError("buscando: " + text);
                                 searching = false;
