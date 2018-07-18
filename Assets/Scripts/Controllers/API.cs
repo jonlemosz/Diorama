@@ -69,13 +69,10 @@ public class API : MonoBehaviour {
             books = new List<BookInfo>();
             SimpleJSON.JSONNode node = SimpleJSON.JSONNode.Parse(www.text);
 
-            //int i = 0;
             foreach (var item in node.Children)
             {
                 BookInfo info = JsonUtility.FromJson<BookInfo>(item.ToString());
                 books.Add( info);
-                //i++;
-                //if (i > 99) break;
             }
         }
         else
@@ -92,15 +89,13 @@ public class API : MonoBehaviour {
     public static Action onSearchResult = ()=> { };
 
 
-    public static void Search(string query) {
-        instance.StartCoroutine(instance.StartSearch(query.Replace(" ","")));
+    public static void Search(string query, string filter) {
+        instance.StartCoroutine(instance.StartSearch(query.Replace(" ",""), filter));
     }
 
-    IEnumerator StartSearch(string query) {
-        WWW www = new WWW(searchEndpoint+query);
-        //Debug.LogError(searchEndpoint + query +"**");
+    IEnumerator StartSearch(string query, string filter) {
+        WWW www = new WWW(searchEndpoint+query+"&filter="+filter);
         yield return www;
-        //Debug.LogError(www.text);
 
         if (string.IsNullOrEmpty(www.error))
         {

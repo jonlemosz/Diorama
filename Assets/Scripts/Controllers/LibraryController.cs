@@ -66,9 +66,6 @@ public class LibraryController : MonoBehaviour {
             Debug.Log("Library done");
 
         });
-
-
-        
     }
 
     public static void ShowBookData(BookInfo info) {
