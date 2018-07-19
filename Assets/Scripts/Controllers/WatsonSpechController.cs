@@ -177,6 +177,7 @@ public class WatsonSpechController : MonoBehaviour {
     }
 
     public bool searching;
+    public string filter;
 
     private void OnRecognize(SpeechRecognitionEvent result, Dictionary<string, object> customData)
     {
@@ -199,15 +200,28 @@ public class WatsonSpechController : MonoBehaviour {
                             {
                                 searching = true;
                                 NotificationArea.Text = "Please say a title keyword";
+                                filter = "title";
+                            }
+
+                            if (text.ToLower().Contains("author"))
+                            {
+                                searching = true;
+                                NotificationArea.Text = "Please say an author keyword";
+                                filter = "author";
+                            }
+                            if (text.ToLower().Contains("topic"))
+                            {
+                                searching = true;
+                                NotificationArea.Text = "Please say a topic keyword";
+                                filter = "topic";
                             }
                         }
                         else
                         {
-                            if (!text.ToLower().Contains("title"))
+                            if (!text.ToLower().Contains("title") && !text.ToLower().Contains("author") && !text.ToLower().Contains("topic"))
                             {
-                                //Debug.LogError("buscando: " + text);
                                 searching = false;
-                                API.Search(text);
+                                API.Search(text, filter);
                                 NotificationArea.Text = "Please wait, looking for \"" + text + "\"\n";
                             }
                         }
