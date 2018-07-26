@@ -41,7 +41,7 @@ public class HandController : MonoBehaviour {
         /*bool trigger = isLeft ? MyInput.ControllerL.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) :
                              MyInput.ControllerR.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger);*/
 
-        Debug.Log("Grip "+grip);
+        //Debug.Log("Grip "+grip);
 
         if (grip)
         {
