@@ -215,10 +215,16 @@ public class WatsonSpechController : MonoBehaviour {
                                 NotificationArea.Text = "Please say a topic keyword";
                                 filter = "topic";
                             }
+                            if (text.ToLower().Contains("location"))
+                            {
+                                searching = true;
+                                NotificationArea.Text = "Please say a location keyword";
+                                filter = "location";
+                            }
                         }
                         else
                         {
-                            if (!text.ToLower().Contains("title") && !text.ToLower().Contains("author") && !text.ToLower().Contains("topic"))
+                            if (!text.ToLower().Contains("title") && !text.ToLower().Contains("author") && !text.ToLower().Contains("topic") && !text.ToLower().Contains("location"))
                             {
                                 searching = false;
                                 API.Search(text, filter);

@@ -57,6 +57,9 @@ public class LibraryController : MonoBehaviour {
         {
             Debug.Log("Instantiating books");
 
+            // Shuffle books
+            Shuffle(books);
+
             instance.isDownloading = false;
             for (int i = 0; i < instance.wallControllers.Count; i++)
             {
@@ -77,4 +80,17 @@ public class LibraryController : MonoBehaviour {
         instance.bookView_location.text = "Location: " + info.location;
     }
 
+    public static void Shuffle(List<BookInfo> list)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            BookInfo value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
+    }
 }
