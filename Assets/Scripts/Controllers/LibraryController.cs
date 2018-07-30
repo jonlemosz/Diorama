@@ -28,26 +28,41 @@ public class LibraryController : MonoBehaviour {
         wallControllers = new List<WallController>(GetComponentsInChildren<WallController>());
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
-        RefillWalls();
-        API.onSearchResult += RefillWalls;
+        RefillWalls(true);
+        API.onSearchResult += RefillWallsNoShuffle;
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RefillWalls();
+            RefillWalls(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Next();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            API.Search("war", "topic");
         }
     }
 
     public void Next()
     {
         //Load books (next self collection)
-        RefillWalls();
+        RefillWalls(true);
     }
 
-   
-    public static void RefillWalls()
+    public static void RefillWallsNoShuffle() {
+        RefillWalls(false);
+    }
+
+
+
+    public static void RefillWalls(bool shuffle)
     {
         if (instance.isDownloading) return;
 
@@ -58,7 +73,7 @@ public class LibraryController : MonoBehaviour {
             Debug.Log("Instantiating books");
 
             // Shuffle books
-            Shuffle(books);
+            if (shuffle) Shuffle(books);
 
             instance.isDownloading = false;
             for (int i = 0; i < instance.wallControllers.Count; i++)
